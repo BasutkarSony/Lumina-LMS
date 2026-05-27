@@ -106,8 +106,6 @@ src/
 - **Admin**: `admin@example.com` / `adminpass`
 *(These users are seeded in the Supabase dev instance.)*
 
-## Screenshots / Placeholders
-> _Add screenshots of the dashboard, AI panel, mentor schedule, and live class view here._
 
 ## Future Scope
 - Gamified badge system.
