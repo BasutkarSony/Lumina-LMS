@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
+import { RoleProvider } from '@/lib/role-context';
 
 export const metadata: Metadata = {
   title: 'Lumina LMS - Student Dashboard',
@@ -32,10 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="bg-background">
-      <body className="font-sans antialiased">
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
-      </body>
+  <body className="font-sans antialiased">
+    <RoleProvider>{children}</RoleProvider>
+    {process.env.NODE_ENV === 'production' && <Analytics />}
+  </body>
     </html>
   )
 }
