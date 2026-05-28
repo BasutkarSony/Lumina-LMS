@@ -57,7 +57,7 @@ All AI calls go through `generateLearningCoachResponse` in `lib/ai.ts`. If the A
 - **State**: React Context (`RoleContext`).
 - **Database**: Supabase (PostgreSQL) for user profiles, batches, announcements, etc.
 - **AI**: Gemini 1.5 Flash via Google Generative AI API.
-- **Deployment**: Vercel (serverless) with environment variables.
+- **Deployment**: Vercel with environment variables.
 
 ## Architecture Overview
 ```
@@ -92,20 +92,13 @@ src/
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Public anon key |
 | `SUPABASE_SERVICE_ROLE_KEY` | Server‑side key for upserts |
 | `GOOGLE_GENERATIVE_AI_API_KEY` | Gemini 1.5 Flash API key |
-| `NEXT_PUBLIC_BASE_URL` (optional) | Base URL for Vercel preview |
+
 
 ## Deployment Guide (Vercel)
 1. Push to `main`.
 2. In Vercel dashboard, import the repository.
 3. Set the same environment variables in Vercel > Settings > Environment Variables.
 4. Vercel will automatically run `npm run build` and deploy.
-
-## Demo Credentials
-- **Student**: `sony@example.com` / `password123`
-- **Mentor**: `mentor@example.com` / `mentorpass`
-- **Admin**: `admin@example.com` / `adminpass`
-*(These users are seeded in the Supabase dev instance.)*
-
 
 ## Future Scope
 - Gamified badge system.
